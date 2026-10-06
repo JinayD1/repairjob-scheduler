@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "functions": {
+    "api/*.py": {
+      "excludeFiles": "{tests/**,node_modules/**,src/**,dist/**,dev_server.py,demo.py}"
+    }
+  }
+}
