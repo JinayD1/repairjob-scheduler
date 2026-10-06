@@ -35,13 +35,13 @@ export default function App() {
   const [exploreSel, setExploreSel] = useState<ExploreSelection>({ techIndex: 0, jobIndex: 0 })
   const [trace, setTrace] = useState<Trace | null>(null)
 
-  // Load the static config once, then start with the demo layout.
+  // Load the static config once. The map starts empty; the "Load demo"
+  // button fills it with the preset.
   useEffect(() => {
     fetchConfig()
       .then((c) => {
         setConfig(c)
         setWDistance(c.default_weights.w_distance)
-        setPins(c.presets.demo)
       })
       .catch((e) => setError(String(e)))
   }, [])
